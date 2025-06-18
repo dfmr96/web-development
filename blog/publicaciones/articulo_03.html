@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Photon PUN | Unity Dev Blog</title>
   <link rel="stylesheet" href="../../style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <nav class="navbar-capsule">
       <img src="../../icon/unityicon.png" alt="Unity Dev Blog logo">
       <a href="../../blog.html">Inicio</a>
-      <a href="../../publicaciones.html">Publicaciones</a>
+      <a href="../../publicaciones.html">Artículos</a>
       <a href="../../contacto.html">Contacto</a>
     </nav>
   </header>
@@ -101,27 +101,31 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
         </p>
 
         <p class="back-link">
-          <a href="../../publicaciones.html">← Volver a publicaciones</a>
+          <a href="../../publicaciones.html">← Volver a Artículos</a>
         </p>
       </article>
 
-      <!-- COLUMNA LATERAL -->
-      <section class="blog_entry contact-column-right" id="info-blog">
-        <h2 class="blog-tittle">Unity Dev Blog</h2>
-        <p>
-          Bienvenido a <strong>Unity Dev Blog</strong>, un blog donde comparto ideas, soluciones y
-          experiencias sobre desarrollo de videojuegos con Unity. Si estás aprendiendo o querés mejorar tus
-          proyectos, este lugar es para vos.
-        </p>
+      <!-- COLUMNA DERECHA -->
+      <section class="blog_entry contact-column-right" id="contact">
+        <h2 class="blog-tittle">Notas desde el Devlog</h2>
+        <div>
+          <p>
+            Este espacio reúne <strong>experimentos, soluciones y aprendizajes</strong> que surgen mientras desarrollo
+            videojuegos en Unity. Si sos desarrollador o estás empezando en este mundo, vas a encontrar contenido útil y
+            directo al punto.
+          </p>
+        </div>
 
-        <h2>Sobre mí</h2>
-        <p>
-          Soy <strong>David Marcano</strong>, estudiante y desarrollador de videojuegos. Trabajo en proyectos
-          propios y académicos con Unity, y comparto lo que aprendo para ayudar a otros devs.
-        </p>
-        <a href="../../index.html" class="btn">Más sobre mí</a>
+        <h2>¿Quién escribe?</h2>
+        <div>
+          <p>
+            Soy <strong>David Marcano</strong>, estudiante avanzado y desarrollador de videojuegos. Trabajo con Unity en
+            proyectos propios, académicos y colaborativos. Este blog nace de la idea de documentar mientras creo.
+          </p>
+          <a href="../index.html" class="btn">Ver perfil completo</a>
+        </div>
 
-        <h2>Suscribite</h2>
+        <h2>Recibir novedades</h2>
         <form action="#" method="post">
           <div>
             <label for="nombre">Nombre:</label>
@@ -137,17 +141,18 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
         </form>
       </section>
 
+
     </div>
   </main>
 
   <footer>
     <p>Autor: David Marcano</p>
     <div>
-      <a href="https://www.linkedin.com/in/marcano96/" target="_blank" class="social-button">
-        <img src="../../images/linkedinLogo.webp" alt="LinkedIn">
+      <a href="https://www.linkedin.com/in/davidmarcano96/" target="_blank" class="social-button">
+        <img src="../../icon/mdi--linkedin (2).svg" alt="LinkedIn">
       </a>
       <a href="https://github.com/dfmr96" target="_blank" class="social-button">
-        <img src="../../images/github.ico" alt="GitHub">
+        <img src="../../icon/github.ico" alt="GitHub">
       </a>
     </div>
   </footer>

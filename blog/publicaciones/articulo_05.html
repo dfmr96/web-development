@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FSM para enemigos | Unity Dev Blog</title>
   <link rel="stylesheet" href="../../style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header class="header">
-        <nav class="navbar-capsule">
-            <img src="../../icon/unityicon.png" alt="Unity Dev Blog logo">
-            <a href="../../blog.html">Inicio</a>
-            <a href="../../publicaciones.html">Publicaciones</a>
-            <a href="../../contacto.html">Contacto</a>
-        </nav>
-    </header>
+  <header class="header">
+    <nav class="navbar-capsule">
+      <img src="../../icon/unityicon.png" alt="Unity Dev Blog logo">
+      <a href="../../blog.html">Inicio</a>
+      <a href="../../publicaciones.html">Artículos</a>
+      <a href="../../contacto.html">Contacto</a>
+    </nav>
+  </header>
 
-<main>
-  <div class="main-content-container">
+  <main>
+    <div class="main-content-container">
 
-    <!-- ARTÍCULO PRINCIPAL -->
-    <article class="blog_entry blog-column-left">
+      <!-- ARTÍCULO PRINCIPAL -->
+      <article class="blog_entry blog-column-left">
 
-      <div class="post-header">
-        <time datetime="2025-06-10">10 de junio de 2025</time>
-        <h2>¿Por qué usar una FSM para tus enemigos?</h2>
-      </div>
+        <div class="post-header">
+          <time datetime="2025-06-10">10 de junio de 2025</time>
+          <h2>¿Por qué usar una FSM para tus enemigos?</h2>
+        </div>
 
-      <p>
-        Una <strong>FSM (Finite State Machine)</strong> o Máquina de Estados Finitos es una de las arquitecturas más utilizadas para implementar comportamientos de enemigos o NPCs en videojuegos. Cada estado representa una acción concreta (como patrullar, atacar, huir) y el sistema controla las transiciones entre ellos según condiciones definidas.
-      </p>
+        <p>
+          Una <strong>FSM (Finite State Machine)</strong> o Máquina de Estados Finitos es una de las arquitecturas más
+          utilizadas para implementar comportamientos de enemigos o NPCs en videojuegos. Cada estado representa una
+          acción concreta (como patrullar, atacar, huir) y el sistema controla las transiciones entre ellos según
+          condiciones definidas.
+        </p>
 
-      <h3>🔁 ¿Cómo funciona una FSM?</h3>
-      <p>
-        Imaginá a tu enemigo como un actor que solo puede hacer una cosa a la vez. Está patrullando... pero si ve al jugador, cambia a perseguir. Si está cerca, ataca. Si tiene poca vida, huye.
-      </p>
+        <h3>🔁 ¿Cómo funciona una FSM?</h3>
+        <p>
+          Imaginá a tu enemigo como un actor que solo puede hacer una cosa a la vez. Está patrullando... pero si ve al
+          jugador, cambia a perseguir. Si está cerca, ataca. Si tiene poca vida, huye.
+        </p>
 
-      <pre><code>
+        <pre><code>
 Estado actual: Patrullar
 ↓ (jugador visto)
 Estado nuevo: Perseguir
@@ -48,17 +54,17 @@ Estado nuevo: Atacar
 Estado nuevo: Huir
       </code></pre>
 
-      <h3>💡 Ventajas de usar FSM</h3>
-      <ul>
-        <li>Organiza el comportamiento en <strong>bloques claros</strong> y separados.</li>
-        <li>Hace el código <strong>más mantenible</strong> y <strong>escalable</strong>.</li>
-        <li>Fácil de <strong>debuggear</strong> al aislar cada lógica en su propio estado.</li>
-        <li>Puede integrarse con animaciones, sensores y lógica de combate.</li>
-      </ul>
+        <h3>💡 Ventajas de usar FSM</h3>
+        <ul>
+          <li>Organiza el comportamiento en <strong>bloques claros</strong> y separados.</li>
+          <li>Hace el código <strong>más mantenible</strong> y <strong>escalable</strong>.</li>
+          <li>Fácil de <strong>debuggear</strong> al aislar cada lógica en su propio estado.</li>
+          <li>Puede integrarse con animaciones, sensores y lógica de combate.</li>
+        </ul>
 
-      <h3>🧪 Estructura simple en código</h3>
-      <p>Ejemplo básico de estructura FSM en C#:</p>
-      <pre><code>
+        <h3>🧪 Estructura simple en código</h3>
+        <p>Ejemplo básico de estructura FSM en C#:</p>
+        <pre><code>
 public enum EnemyState {
     Patrol, Chase, Attack, Flee
 }
@@ -80,75 +86,85 @@ public class EnemyFSM : MonoBehaviour {
 }
       </code></pre>
 
-      <h3>🧠 Consejos extra</h3>
-      <ul>
-        <li>Usá <code>ScriptableObjects</code> o interfaces si querés una FSM más flexible o basada en composición.</li>
-        <li>Podés visualizarla con diagramas UML para planear estados antes de escribir código.</li>
-        <li>Combiná FSM con sensores (raycasts, triggers) para transiciones más dinámicas.</li>
-        <li>Podés anidar FSM dentro de FSM si necesitás comportamientos jerárquicos.</li>
-      </ul>
+        <h3>🧠 Consejos extra</h3>
+        <ul>
+          <li>Usá <code>ScriptableObjects</code> o interfaces si querés una FSM más flexible o basada en composición.
+          </li>
+          <li>Podés visualizarla con diagramas UML para planear estados antes de escribir código.</li>
+          <li>Combiná FSM con sensores (raycasts, triggers) para transiciones más dinámicas.</li>
+          <li>Podés anidar FSM dentro de FSM si necesitás comportamientos jerárquicos.</li>
+        </ul>
 
-      <h3>🤖 FSM + Behavior Tree</h3>
-      <p>
-        En juegos más complejos, es común combinar FSM con árboles de comportamiento. La FSM define el "modo general" (ej: ofensivo o evasivo) y el árbol decide cómo actuar dentro de ese modo.
-      </p>
+        <h3>🤖 FSM + Behavior Tree</h3>
+        <p>
+          En juegos más complejos, es común combinar FSM con árboles de comportamiento. La FSM define el "modo general"
+          (ej: ofensivo o evasivo) y el árbol decide cómo actuar dentro de ese modo.
+        </p>
 
-      <h3>🎯 Conclusión</h3>
-      <p>
-        La FSM es una herramienta poderosa para modelar comportamientos predecibles y organizados en enemigos. Te permite escalar desde enemigos simples hasta jefes con múltiples fases, manteniendo el control y la legibilidad. Si estás empezando con IA en Unity, dominar FSM es uno de los mejores pasos que podés dar.
-      </p>
+        <h3>🎯 Conclusión</h3>
+        <p>
+          La FSM es una herramienta poderosa para modelar comportamientos predecibles y organizados en enemigos. Te
+          permite escalar desde enemigos simples hasta jefes con múltiples fases, manteniendo el control y la
+          legibilidad. Si estás empezando con IA en Unity, dominar FSM es uno de los mejores pasos que podés dar.
+        </p>
 
-      <p class="back-link">
-        <a href="../../publicaciones.html">← Volver a publicaciones</a>
-      </p>
-    </article>
+        <p class="back-link">
+          <a href="../../publicaciones.html">← Volver a Artículos</a>
+        </p>
+      </article>
 
-    <!-- COLUMNA LATERAL -->
-    <section class="blog_entry contact-column-right" id="info-blog">
-      <h2 class="blog-tittle">Unity Dev Blog</h2>
-      <p>
-        Bienvenido a <strong>Unity Dev Blog</strong>, un blog donde comparto ideas, soluciones y
-        experiencias sobre desarrollo de videojuegos con Unity. Si estás aprendiendo o querés mejorar tus
-        proyectos, este lugar es para vos.
-      </p>
-
-      <h2>Sobre mí</h2>
-      <p>
-        Soy <strong>David Marcano</strong>, estudiante y desarrollador de videojuegos. Trabajo en proyectos
-        propios y académicos con Unity, y comparto lo que aprendo para ayudar a otros devs.
-      </p>
-      <a href="../../index.html" class="btn">Más sobre mí</a>
-
-      <h2>Suscribite</h2>
-      <form action="#" method="post">
+      <!-- COLUMNA DERECHA -->
+      <section class="blog_entry contact-column-right" id="contact">
+        <h2 class="blog-tittle">Notas desde el Devlog</h2>
         <div>
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required>
+          <p>
+            Este espacio reúne <strong>experimentos, soluciones y aprendizajes</strong> que surgen mientras desarrollo
+            videojuegos en Unity. Si sos desarrollador o estás empezando en este mundo, vas a encontrar contenido útil y
+            directo al punto.
+          </p>
         </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-          <button type="submit" class="btn">Suscribirme</button>
-        </div>
-      </form>
-    </section>
 
-  </div>
-</main>
+        <h2>¿Quién escribe?</h2>
+        <div>
+          <p>
+            Soy <strong>David Marcano</strong>, estudiante avanzado y desarrollador de videojuegos. Trabajo con Unity en
+            proyectos propios, académicos y colaborativos. Este blog nace de la idea de documentar mientras creo.
+          </p>
+          <a href="../index.html" class="btn">Ver perfil completo</a>
+        </div>
 
-<footer>
-  <p>Autor: David Marcano</p>
-  <div>
-    <a href="https://www.linkedin.com/in/marcano96/" target="_blank" class="social-button">
-      <img src="../../images/linkedinLogo.webp" alt="LinkedIn">
-    </a>
-    <a href="https://github.com/dfmr96" target="_blank" class="social-button">
-      <img src="../../images/github.ico" alt="GitHub">
-    </a>
-  </div>
-</footer>
+        <h2>Recibir novedades</h2>
+        <form action="#" method="post">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <button type="submit" class="btn">Suscribirme</button>
+          </div>
+        </form>
+      </section>
+
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Autor: David Marcano</p>
+    <div>
+      <a href="https://www.linkedin.com/in/davidmarcano96/" target="_blank" class="social-button">
+        <img src="../../icon/mdi--linkedin (2).svg" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/dfmr96" target="_blank" class="social-button">
+        <img src="../../icon/github.ico" alt="GitHub">
+      </a>
+    </div>
+  </footer>
 
 </body>
+
 </html>
