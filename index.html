@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TPs | David Marcano</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300..800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="img/avatar.png" />
+  <style>
+    :root {
+      --bg-main: #0D0E22;
+      --bg-card: #1A1C38;
+      --color-primary: #3BF2C2;
+      --color-accent: #FF4E84;
+      --color-text: #EDEDED;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 0.5; }
+    }
+
+    body {
+      font-family: 'Lexend Deca', sans-serif;
+      background: radial-gradient(circle at top, #1A1A2E 0%, #0D0E22 100%);
+      color: var(--color-text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .avatar-glow {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(59,242,194,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+      top: 90px;
+      animation: pulse 3s infinite;
+    }
+
+    .avatar {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 20px rgba(59, 242, 194, 0.4);
+      border: 2px solid rgba(59, 242, 194, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+      letter-spacing: 1px;
+      transition: text-shadow 0.3s ease;
+    }
+
+    h1:hover {
+      text-shadow: 0 0 8px var(--color-primary);
+    }
+
+    .description {
+      max-width: 400px;
+      color: #ccc;
+      margin-top: -1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skills {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-bottom: 2rem;
+    }
+
+    .link-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 420px;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    a.link {
+      background-color: var(--bg-card);
+      color: var(--color-text);
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      box-shadow: 0 5px 15px rgba(0, 245, 212, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s;
+    }
+
+    a.link:hover,
+    a.link:focus {
+      transform: translateY(-4px) scale(1.03);
+      background: linear-gradient(135deg, var(--color-accent), #ff70a5);
+      color: #fff;
+      border-color: var(--color-primary);
+      box-shadow: 0 6px 20px rgba(255, 78, 132, 0.4);
+      outline: none;
+    }
+
+    .social-links {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+    }
+
+    .social-links a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 0 8px rgba(59, 242, 194, 0.1);
+    }
+
+    .social-links a:hover {
+      transform: scale(1.1);
+      background-color: var(--color-accent);
+    }
+
+    .social-links img {
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      opacity: 0.5;
+      color: var(--color-text);
+    }
+
+    footer p:last-child {
+      font-size: 0.75rem;
+      margin-top: 0.2rem;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.5rem; }
+      a.link { font-size: 0.95rem; padding: 0.9rem 1.2rem; }
+      .skills { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="avatar-glow"></div>
+  <img src="img/avatar.png" alt="David Marcano" class="avatar">
+  <h1>Trabajos Prácticos | David Marcano</h1>
+
+  <p class="description">
+    Soy David, estudiante de videojuegos en UADE. En esta página comparto mis entregas académicas con diseño personalizado.
+  </p>
+  <p class="skills">
+    Unity Dev
+  </p>
+
+  <div class="link-container">
+    <a href="tp1-identikit/index.html" class="link" target="_blank">🧑‍🎨 Identikit</a>
+    <a href="blog.html" class="link" target="_blank">📝 Blog Personal</a>
+    <a href="tp3-portfolio/index.html" class="link" target="_blank">💼 Portfolio</a>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/marcano96" target="_blank" aria-label="LinkedIn">
+      <img src="icon/mdi--linkedin (2).svg" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/dfmr96" target="_blank" aria-label="GitHub">
+      <img src="icon/github.ico" alt="GitHub">
+    </a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 David Marcano</p>
+    <p>"Build, share, improve." 👾</p>
+  </footer>
+
+</body>
+</html>

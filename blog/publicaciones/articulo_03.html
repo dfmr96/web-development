@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photon PUN | Unity Dev Blog</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar-capsule">
+      <img src="/icon/unityicon.png" alt="Unity Dev Blog logo">
+      <a href="/blog.html">Inicio</a>
+      <a href="/publicaciones.html">Publicaciones</a>
+      <a href="/contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="main-content-container">
+
+      <!-- ARTÍCULO PRINCIPAL -->
+      <article class="blog_entry blog-column-left">
+
+        <div class="post-header">
+          <time datetime="2025-06-04">04 de junio de 2025</time>
+          <h2>Photon PUN: Tu primer paso al multijugador</h2>
+        </div>
+
+        <p>
+          <strong>Photon PUN</strong> (Photon Unity Networking) es una solución lista para usar que permite agregar funcionalidades multijugador a tus juegos de Unity sin necesidad de montar tu propio servidor. Es ideal para juegos cooperativos, PvP y experiencias en tiempo real.
+        </p>
+
+        <h3>🚀 ¿Qué podés hacer con Photon?</h3>
+        <ul>
+          <li>Crear salas públicas o privadas con matchmaking rápido.</li>
+          <li>Sincronizar movimiento, animaciones, vidas y acciones.</li>
+          <li>Enviar comandos entre jugadores usando RPCs (ataques, sonidos, efectos).</li>
+        </ul>
+
+        <h3>📦 ¿Cómo se estructura?</h3>
+        <p>Photon trabaja con el concepto de **Room** y **Actor**:</p>
+        <ul>
+          <li>Una <strong>Room</strong> representa una partida o sesión.</li>
+          <li>Cada jugador es un <strong>Actor</strong> con un ID único.</li>
+        </ul>
+
+        <p>Cuando instanciás objetos con `PhotonNetwork.Instantiate`, estos se sincronizan automáticamente entre todos los jugadores de la sala.</p>
+
+        <h3>🧪 Ejemplo básico con RPC</h3>
+        <p>Un RPC es una función que se ejecuta en todos los clientes:</p>
+        <pre><code>
+[PunRPC]
+void TakeDamage(int amount) {
+    currentHealth -= amount;
+    if (currentHealth <= 0) Die();
+}
+        </code></pre>
+
+        <p>Para llamar este método desde otro jugador:</p>
+        <pre><code>
+photonView.RPC("TakeDamage", RpcTarget.All, 10);
+        </code></pre>
+
+        <h3>🎮 Sincronización de movimiento</h3>
+        <p>Podés usar `PhotonTransformView` o escribir tu propia lógica con `OnPhotonSerializeView`:</p>
+        <pre><code>
+public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+    if (stream.IsWriting) {
+        stream.SendNext(transform.position);
+    } else {
+        transform.position = (Vector3)stream.ReceiveNext();
+    }
+}
+        </code></pre>
+
+        <h3>🧠 Buenas prácticas</h3>
+        <ul>
+          <li>No hagas lógica pesada en cada `Update()` si no es necesario.</li>
+          <li>Usá `PhotonNetwork.IsMasterClient` para controlar la lógica del host.</li>
+          <li>Limitá cuántos datos mandás por red: evitá sincronizar innecesariamente.</li>
+          <li>Separá lógica local de lógica de red: usá `photonView.IsMine` para saber si es tu jugador.</li>
+        </ul>
+
+        <h3>🧩 Cuándo evitarlo</h3>
+        <p>Photon es excelente para prototipos o juegos medianos. Pero si querés escalar a millones de usuarios o tenés lógica de servidor compleja, deberías considerar soluciones dedicadas como **Mirror**, **Netcode for GameObjects** o backend custom.</p>
+
+        <h3>🎯 Conclusión</h3>
+        <p>
+          Photon PUN es una excelente puerta de entrada al mundo multijugador en Unity. Tiene una API sencilla, buena documentación y una comunidad activa. Perfecto para tu primer proyecto coop o competitivo.
+        </p>
+
+        <p class="back-link">
+          <a href="/publicaciones.html">← Volver a publicaciones</a>
+        </p>
+      </article>
+
+      <!-- COLUMNA LATERAL -->
+      <section class="blog_entry contact-column-right" id="info-blog">
+        <h2 class="blog-tittle">Unity Dev Blog</h2>
+        <p>
+          Bienvenido a <strong>Unity Dev Blog</strong>, un blog donde comparto ideas, soluciones y
+          experiencias sobre desarrollo de videojuegos con Unity. Si estás aprendiendo o querés mejorar tus
+          proyectos, este lugar es para vos.
+        </p>
+
+        <h2>Sobre mí</h2>
+        <p>
+          Soy <strong>David Marcano</strong>, estudiante y desarrollador de videojuegos. Trabajo en proyectos
+          propios y académicos con Unity, y comparto lo que aprendo para ayudar a otros devs.
+        </p>
+        <a href="../index.html" class="btn">Más sobre mí</a>
+
+        <h2>Suscribite</h2>
+        <form action="#" method="post">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <button type="submit" class="btn">Suscribirme</button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Autor: David Marcano</p>
+    <div>
+      <a href="https://www.linkedin.com/in/marcano96/" target="_blank" class="social-button">
+        <img src="../images/linkedinLogo.webp" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/dfmr96" target="_blank" class="social-button">
+        <img src="../images/github.ico" alt="GitHub">
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

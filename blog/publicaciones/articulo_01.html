@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orden de ejecución en Unity | Unity Dev Blog</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar-capsule">
+            <img src="/icon/unityicon.png" alt="Unity Dev Blog logo">
+            <a href="/blog.html">Inicio</a>
+            <a href="/publicaciones.html">Publicaciones</a>
+            <a href="/contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-content-container">
+            <article class="blog_entry blog-column-left">
+
+
+                <div class="post-header">
+                    <time datetime="2025-06-01">01 de junio de 2025</time>
+                    <h2>¿En qué orden se ejecutan los scripts en Unity?</h2>
+                </div>
+
+
+                <p>
+                    Cuando desarrollás en Unity, seguramente usás métodos como <code>Awake()</code>,
+                    <code>Start()</code> o <code>Update()</code>. Todos estos métodos son llamados por Unity en un orden
+                    específico, que muchas veces no conocemos al detalle. Entender este <strong>orden de
+                        ejecución</strong> puede ayudarte a evitar errores y a organizar mejor tu código.
+                </p>
+
+                <h3>🔁 ¿Qué son los métodos de evento (event functions)?</h3>
+                <p>
+                    Unity define una serie de métodos llamados <strong>event functions</strong>, que son invocados
+                    automáticamente cuando ocurre cierto evento dentro del motor (como iniciar la escena, detectar una
+                    colisión, o dibujar en pantalla).
+                    Estos métodos los implementás dentro de tus scripts con <code>MonoBehaviour</code> y no hace falta
+                    llamarlos manualmente: Unity se encarga.
+                </p>
+
+                <h3>📋 Orden típico de ejecución</h3>
+                <p>Durante la ejecución normal del juego, los métodos se llaman en el siguiente orden:</p>
+                <ul>
+                    <li><strong>Awake()</strong>: llamado al crear o activar un objeto. Ideal para inicializar
+                        variables.</li>
+                    <li><strong>OnEnable()</strong>: cuando el objeto se activa.</li>
+                    <li><strong>Start()</strong>: llamado una sola vez antes del primer frame. Usalo para lógica
+                        inicial.</li>
+                    <li><strong>Update()</strong>: llamado en cada frame. Ideal para controles, timers, lógica.</li>
+                    <li><strong>LateUpdate()</strong>: después del Update. Perfecto para seguir al jugador con una
+                        cámara.</li>
+                    <li><strong>FixedUpdate()</strong>: ejecutado a intervalos fijos. Se usa para física.</li>
+                    <li><strong>OnDisable()</strong>: cuando el objeto es desactivado.</li>
+                    <li><strong>OnDestroy()</strong>: justo antes de destruir el objeto.</li>
+                </ul>
+
+                <h3>🧠 Buenas prácticas</h3>
+                <ul>
+                    <li>No intentes acceder a otro script en <code>Awake()</code> si el otro script inicializa en
+                        <code>Start()</code>. Podés obtener un <code>null</code>.
+                    </li>
+                    <li>Usá <code>FixedUpdate()</code> para mover objetos con Rigidbody. No <code>Update()</code>.</li>
+                    <li>Para seguir a un personaje con cámara, hacelo en <code>LateUpdate()</code>, así te asegurás de
+                        que el movimiento ya ocurrió.</li>
+                    <li>Si querés controlar el orden entre scripts, usá el panel <strong>Script Execution Order</strong>
+                        desde el menú: <code>Edit → Project Settings → Script Execution Order</code>.</li>
+                </ul>
+
+                <h3>📌 Casos especiales</h3>
+                <ul>
+                    <li><strong>OnApplicationPause()</strong>: se llama cuando la app es pausada (ideal para móviles).
+                    </li>
+                    <li><strong>OnApplicationQuit()</strong>: justo antes de cerrar la app o salir del editor.</li>
+                    <li><strong>OnValidate()</strong> y <strong>Reset()</strong>: se usan solo en el Editor, útiles para
+                        debug o custom inspectors.</li>
+                </ul>
+
+                <h3>📷 Imagen útil</h3>
+                <p>
+                    El diagrama oficial de Unity explica esto gráficamente. Podés encontrarlo en:
+                    <a href="https://docs.unity3d.com/6000.1/Documentation/Manual/execution-order.html"
+                        target="_blank">Unity Manual - Execution Order</a>
+                </p>
+                <img src="/img/monobehaviour_flowchart.png" alt="Diagrama del orden de ejecución de Unity" />
+
+                <h3>🎓 Conclusión</h3>
+                <p>
+                    Conocer el orden de ejecución de Unity no es solo para programadores avanzados. Como principiante,
+                    te va a ayudar a evitar errores comunes y entender por qué algunas cosas no funcionan como esperás.
+                    Empezá prestando atención a <code>Awake</code>, <code>Start</code>, <code>Update</code> y
+                    <code>LateUpdate</code>, y vas a tener un control mucho más preciso sobre tus scripts.
+                </p>
+                <p class="back-link">
+                    <a href="/publicaciones.html">← Volver a publicaciones</a>
+                </p>
+
+            </article>
+            <section class="blog_entry contact-column-right" id="info-blog">
+                <h2 class="blog-tittle">Unity Dev Blog</h2>
+                <p>
+                    Bienvenido a <strong>Unity Dev Blog</strong>, un blog donde comparto ideas, soluciones y
+                    experiencias sobre desarrollo de videojuegos con Unity. Si estás aprendiendo o querés mejorar tus
+                    proyectos, este lugar es para vos.
+                </p>
+
+                <h2>Sobre mí</h2>
+                <p>
+                    Soy <strong>David Marcano</strong>, estudiante y desarrollador de videojuegos. Trabajo en proyectos
+                    propios y académicos con Unity, y comparto lo que aprendo para ayudar a otros devs.
+                </p>
+                <a href="../index.html" class="btn">Más sobre mí</a>
+
+                <h2>Suscribite</h2>
+                <form action="#" method="post">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">Suscribirme</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Autor: David Marcano</p>
+        <div>
+            <a href="https://www.linkedin.com/in/marcano96/" target="_blank" class="social-button">
+                <img src="../images/linkedinLogo.webp" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/dfmr96" target="_blank" class="social-button">
+                <img src="../images/github.ico" alt="GitHub">
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

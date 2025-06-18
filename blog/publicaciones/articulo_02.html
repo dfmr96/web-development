@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScriptableObjects | Unity Dev Blog</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar-capsule">
+            <img src="/icon/unityicon.png" alt="Unity Dev Blog logo">
+            <a href="/blog.html">Inicio</a>
+            <a href="/publicaciones.html">Publicaciones</a>
+            <a href="/contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-content-container">
+
+            <!-- ARTÍCULO PRINCIPAL -->
+            <article class="blog_entry blog-column-left">
+
+                <div class="post-header">
+                    <time datetime="2025-06-02">02 de junio de 2025</time>
+                    <h2>ScriptableObjects para diseño modular</h2>
+                </div>
+
+                <p>
+                    Los <strong>ScriptableObjects</strong> son una herramienta poderosa en Unity para separar los datos
+                    de la lógica.
+                    Te permiten crear objetos de datos reutilizables y fácilmente editables desde el inspector.
+                </p>
+
+                <h3>💡 ¿Por qué usarlos?</h3>
+                <ul>
+                    <li>Centralizan datos como estadísticas de enemigos, armas, diálogos o configuraciones.</li>
+                    <li>Evitan la duplicación de datos en múltiples escenas.</li>
+                    <li>Reducen el uso de memoria al no necesitar instancias activas en la jerarquía.</li>
+                    <li>Permiten un diseño orientado a datos: <em>data-driven development</em>.</li>
+                </ul>
+
+                <h3>🧪 Ejemplo básico</h3>
+                <p>Veamos cómo crear un ScriptableObject para enemigos:</p>
+                <pre><code>
+[CreateAssetMenu(fileName = "NewEnemyData", menuName = "Game Data/Enemy")]
+public class EnemyData : ScriptableObject {
+    public string enemyName;
+    public int maxHealth;
+    public float moveSpeed;
+    public Sprite portrait;
+}
+</code></pre>
+
+
+                <p>Guardá este script como `EnemyData.cs`. Luego, en el editor de Unity, hacé clic derecho en el Project
+                    Window y elegí: <code>Create → Game Data → Enemy</code>.
+                </p>
+
+<img src="/img/Screen-Shot-2022-04-13-at-12.55.49.png" alt="Diagrama del orden de ejecución de Unity" />
+
+                <h3>⚙️ ¿Cómo los usás?</h3>
+                <p>Podés referenciar un ScriptableObject desde cualquier `MonoBehaviour`:</p>
+                <pre><code>
+public class Enemy : MonoBehaviour {
+    public EnemyData data;
+
+    void Start() {
+        Debug.Log("Enemigo: " + data.enemyName);
+    }
+}
+  </code></pre>
+
+                <p>Esto te permite que varios enemigos compartan la misma data sin necesidad de duplicar la lógica.
+                    Cambiás el dato, ¡y se actualizan todos!</p>
+
+                <h3>🧠 Buenas prácticas</h3>
+                <ul>
+                    <li>Separá los scripts de lógica (MonoBehaviours) de los scripts de datos (ScriptableObjects).</li>
+                    <li>Usá `CreateAssetMenu` para facilitar su creación.</li>
+                    <li>No los modifiques en tiempo de ejecución si querés preservar su estado original. Para eso, cloná
+                        el objeto si hace falta.</li>
+                    <li>Podés combinarlos con sistemas como FSM, árboles de comportamiento o sistemas de ítems.</li>
+                </ul>
+
+                <h3>🧩 Cuándo evitarlos</h3>
+                <p>Si necesitás modificar datos frecuentemente en tiempo de ejecución y mantener el estado por escena o
+                    por sesión, es mejor usar clases normales o componentes directamente.</p>
+
+                <h3>🧬 Relación con el Patrón Flyweight</h3>
+                <p>
+                    El patrón <strong>Flyweight</strong> busca <em>compartir datos comunes</em> entre múltiples objetos
+                    para <strong>ahorrar memoria</strong>,
+                    especialmente en situaciones donde hay muchas instancias con la misma configuración (enemigos,
+                    proyectiles, ítems, etc.).
+                </p>
+                <p>
+                    Los <code>ScriptableObjects</code> en Unity son una <strong>implementación natural de
+                        Flyweight</strong>: definís una sola instancia de datos
+                    (por ejemplo, <code>EnemyData</code>) y todos los objetos que la usan comparten esa misma fuente.
+                </p>
+                <pre><code>
+public class Enemy : MonoBehaviour {
+    public EnemyData data;
+
+    void Start() {
+        health = data.maxHealth;
+    }
+}
+</code></pre>
+                <p>
+                    Si tenés 100 enemigos en una escena usando el mismo <code>EnemyData</code>, todos apuntan a la
+                    <em>misma</em> instancia en memoria.
+                    Esto es eficiente y mantiene los datos centralizados.
+                </p>
+                <p>
+                    ⚠️ Eso sí: si modificás un <code>ScriptableObject</code> en tiempo de ejecución, también estás
+                    afectando a todos los objetos que lo referencian.
+                    Para evitarlo, podés crear una copia usando <code>Instantiate()</code> si necesitás modificarlo sin
+                    afectar al original.
+                </p>
+
+                <p class="back-link">
+                    <a href="/publicaciones.html">← Volver a publicaciones</a>
+                </p>
+
+            </article>
+
+            <!-- COLUMNA LATERAL -->
+            <section class="blog_entry contact-column-right" id="info-blog">
+                <h2 class="blog-tittle">Unity Dev Blog</h2>
+                <p>
+                    Bienvenido a <strong>Unity Dev Blog</strong>, un blog donde comparto ideas, soluciones y
+                    experiencias sobre desarrollo de videojuegos con Unity. Si estás aprendiendo o querés mejorar tus
+                    proyectos, este lugar es para vos.
+                </p>
+
+                <h2>Sobre mí</h2>
+                <p>
+                    Soy <strong>David Marcano</strong>, estudiante y desarrollador de videojuegos. Trabajo en proyectos
+                    propios y académicos con Unity, y comparto lo que aprendo para ayudar a otros devs.
+                </p>
+                <a href="../index.html" class="btn">Más sobre mí</a>
+
+                <h2>Suscribite</h2>
+                <form action="#" method="post">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">Suscribirme</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Autor: David Marcano</p>
+        <div>
+            <a href="https://www.linkedin.com/in/marcano96/" target="_blank" class="social-button">
+                <img src="../images/linkedinLogo.webp" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/dfmr96" target="_blank" class="social-button">
+                <img src="../images/github.ico" alt="GitHub">
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

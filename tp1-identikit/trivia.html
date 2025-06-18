@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia - Pregunta 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 30px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .option {
+            width: 300px;
+            height: 350px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        .option:hover {
+            transform: scale(1.05);
+        }
+
+        .option img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+        }
+
+        .label {
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+            background-color: #fff;
+            width: 100%;
+        }
+
+        nav {
+            background-color: #f4f4f4;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #007BFF;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="games.html">Mis Juegos</a>
+        <a href="trivia.html">Trivia Creativa</a>
+        <a href="content.html">Videos</a> 
+      </nav>
+    <h1>¿Qué juego está hecho con Unity?</h1>
+
+    <div class="options-container">
+        <a class="option" href="p2.html">
+            <img src="img/trivia/pokemongo2.jpg" alt="Pokemon GO" />
+            <div class="label">Pokémon GO</div>
+        </a>
+        <a class="option" href="defeat.html">
+            <img src="img/trivia/fornite.jpeg" alt="Fortnite" />
+            <div class="label">Fortnite</div>
+        </a>
+    </div>
+</body>
+
+</html>

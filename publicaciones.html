@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publicaciones | Unity Dev Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/unity-icon.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="navbar-capsule">
+      <img src="icon/unityicon.png" alt="Unity Dev Blog logo">
+      <a href="blog.html">Inicio</a>
+      <a href="publicaciones.html" class="active">Publicaciones</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 🔍 Buscador y filtros arriba del contenido -->
+    <div class="barra-filtros">
+      <input type="text" id="buscador-articulos" placeholder="Buscar por título..." />
+      <div class="filtros">
+        <button class="filtro-btn active" data-filtro="todos">Todos</button>
+        <button class="filtro-btn" data-filtro="documentacion">Documentación</button>
+        <button class="filtro-btn" data-filtro="scriptables">Scriptables</button>
+        <button class="filtro-btn" data-filtro="multiplayer">Multiplayer</button>
+        <button class="filtro-btn" data-filtro="ui">UI</button>
+        <button class="filtro-btn" data-filtro="ia">IA</button>
+      </div>
+    </div>
+
+    <div class="main-content-container">
+      <!-- GRID DE ARTÍCULOS -->
+      <div class="blog-column-left blog-grid">
+        <a href="/blog/publicaciones/articulo_01.html" data-category="documentacion">
+          <div class="blog-item">
+            <img src="img/unitymethods_cover.png" alt="Unity Methods">
+            <div class="blog-meta">
+              <time datetime="2025-06-02">02 de junio de 2025</time>
+              <h4>Métodos de Unity</h4>
+              <p>Conocé el orden real en que se ejecutan Awake, Start, Update y otros métodos de Unity.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/publicaciones/articulo_02.html" data-category="scriptables">
+          <div class="blog-item">
+            <img src="img/Screen-Shot-2022-04-13-at-12.55.49.png" alt="ScriptableObjects">
+            <div class="blog-meta">
+              <time datetime="2025-06-02">02 de junio de 2025</time>
+              <h4>ScriptableObjects</h4>
+              <p>Explorá una forma eficiente de estructurar datos reutilizables con Flyweight y diseño modular.</p>
+             
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/publicaciones/articulo_03.html" data-category="multiplayer">
+          <div class="blog-item">
+            <img src="img/photon_pun.jpg" alt="Photon PUN">
+            <div class="blog-meta">
+              <time datetime="2025-06-02">02 de junio de 2025</time>
+              <h4>Photon Pun 2</h4>
+              <p>Descubrí cómo empezar con multijugador en Unity usando Photon y sincronizar jugadores fácilmente.</p>
+          
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/publicaciones/articulo_04.html" data-category="ui">
+          <div class="blog-item">
+            <img src="img/unity_ui.png" alt="Diseño UI">
+            <div class="blog-meta">
+              <time datetime="2025-06-02">02 de junio de 2025</time>
+              <h4>Interfaz de Usuario</h4>
+              <p>Mejorá la interfaz de tus juegos con tips prácticos sobre escalado, feedback y claridad visual.</p>
+         
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/publicaciones/articulo_05.html" data-category="ia">
+          <div class="blog-item">
+            <img src="img/unity_fsm.png" alt="FSM IA">
+            <div class="blog-meta">
+              <time datetime="2025-06-02">02 de junio de 2025</time>
+              <h4>Finite State Machines</h4>
+              <p>Implementá una máquina de estados para organizar el comportamiento de enemigos en tu juego.</p>
+        
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- COLUMNA DERECHA -->
+      <section class="blog_entry contact-column-right" id="contact">
+        <h2 class="blog-tittle">Unity Dev Blog</h2>
+        <div>
+          <p>
+            Bienvenido a <strong>Unity Dev Blog</strong>, un blog donde comparto ideas, soluciones y experiencias sobre
+            desarrollo de videojuegos con Unity. Si estás aprendiendo o querés mejorar tus proyectos, este lugar es para
+            vos.
+          </p>
+        </div>
+
+        <h2>Sobre mí</h2>
+        <div>
+          <p>
+            Soy <strong>David Marcano</strong>, estudiante y desarrollador de videojuegos. Trabajo en proyectos propios
+            y académicos con Unity, y comparto lo que aprendo para ayudar a otros devs.
+          </p>
+          <a href="../index.html" class="btn">Más sobre mí</a>
+        </div>
+
+        <h2>Suscribite</h2>
+        <form action="#" method="post">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <button type="submit" class="btn">Suscribirme</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Autor: David Marcano</p>
+    <div>
+      <a href="https://www.linkedin.com/in/marcano96/" target="_blank" class="social-button">
+        <img src="images/linkedinLogo.webp" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/dfmr96" target="_blank" class="social-button">
+        <img src="images/github.ico" alt="GitHub">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const filtroBotones = document.querySelectorAll(".filtro-btn");
+    const articulos = document.querySelectorAll(".blog-column-left a");
+    const buscador = document.getElementById("buscador-articulos");
+
+    filtroBotones.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filtroBotones.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filtro = btn.getAttribute("data-filtro");
+
+        articulos.forEach(item => {
+          const categoria = item.getAttribute("data-category");
+
+          if (filtro === "todos" || categoria === filtro) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+
+        buscador.value = ""; // limpia el buscador si se filtra
+      });
+    });
+
+    buscador.addEventListener("input", () => {
+      const query = buscador.value.toLowerCase();
+      articulos.forEach(item => {
+        const titulo = item.querySelector("h4").textContent.toLowerCase();
+        item.style.display = titulo.includes(query) ? "block" : "none";
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto | Unity Dev Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/unity-icon.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header class="header">
+  <nav class="navbar-capsule">
+    <img src="icon/unityicon.png" alt="Unity Dev Blog logo">
+    <a href="blog.html">Inicio</a>
+    <a href="publicaciones.html">Publicaciones</a>
+    <a href="contacto.html" class="active">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <div class="main-content-container">
+
+    <!-- FORMULARIO -->
+    <section class="blog_entry blog-column-left">
+      <h2>Contacto</h2>
+      <form action="#" method="post">
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+
+        <div>
+          <button type="submit" class="btn">Enviar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- COLUMNA DERECHA -->
+    <section class="blog_entry contact-column-right" id="contact">
+      <h2 class="blog-tittle">Unity Dev Blog</h2>
+      <div>
+        <p>
+          ¿Querés escribirme una sugerencia, idea o propuesta de colaboración? <br>
+          Usá el formulario y te respondo lo antes posible.
+        </p>
+      </div>
+
+      <h2>Sobre mí</h2>
+      <div>
+        <p>
+          Soy <strong>David Marcano</strong>, desarrollador de videojuegos y estudiante en UADE. Este blog es parte de mi recorrido como dev, donde comparto lo que aprendo sobre Unity, C#, diseño de sistemas, IA y optimización.
+        </p>
+        <a href="https://www.linkedin.com/in/marcano96/" class="btn" target="_blank">Ver LinkedIn</a>
+      </div>
+
+      <h2>Suscribite</h2>
+      <form action="#" method="post">
+        <div>
+          <label for="nombre2">Nombre:</label>
+          <input type="text" id="nombre2" name="nombre2" required>
+        </div>
+        <div>
+          <label for="email2">Email:</label>
+          <input type="email" id="email2" name="email2" required>
+        </div>
+        <div>
+          <button type="submit" class="btn">Suscribirme</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>Autor: David Marcano</p>
+  <div>
+    <a href="https://www.linkedin.com/in/marcano96/" target="_blank" class="social-button">
+      <img src="images/linkedinLogo.webp" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/dfmr96" target="_blank" class="social-button">
+      <img src="images/github.ico" alt="GitHub">
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>

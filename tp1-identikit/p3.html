@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trivia - Pregunta 3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+      padding-top: 60px;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #007BFF;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .options-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .option {
+      width: 300px;
+      height: 400px;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    .option:hover {
+      transform: scale(1.05);
+    }
+
+    .option img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="games.html">Mis Juegos</a>
+    <a href="trivia.html">Trivia Creativa</a>
+    <a href="content.html">Videos</a>
+  </nav>
+  <h1>¿Cuál de estos juegos fue hecho con Unity?</h1>
+
+  <div class="options-container">
+    <a class="option" href="win.html">
+      <img src="img/trivia/hollowknight.jpg" alt="Hollow Knight" />
+    </a>
+    <a class="option" href="defeat.html">
+      <img src="img/trivia/thelastofus.png" alt="The Last of Us" />
+    </a>
+  </div>
+
+</body>
+
+</html>

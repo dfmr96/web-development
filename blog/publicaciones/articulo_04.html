@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diseño UI en Unity | Unity Dev Blog</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar-capsule">
+      <img src="/icon/unityicon.png" alt="Unity Dev Blog logo">
+      <a href="/blog.html">Inicio</a>
+      <a href="/publicaciones.html">Publicaciones</a>
+      <a href="/contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="main-content-container">
+
+      <!-- ARTÍCULO PRINCIPAL -->
+      <article class="blog_entry blog-column-left">
+
+        <div class="post-header">
+          <time datetime="2025-06-07">07 de junio de 2025</time>
+          <h2>Tips de UI para juegos casuales en Unity</h2>
+        </div>
+
+
+        <p>
+          La interfaz de usuario en juegos casuales es más que estética: es una herramienta clave para guiar al jugador, brindar feedback y generar una experiencia fluida y divertida. En este artículo te dejo algunos consejos prácticos para mejorar la UI de tus juegos en Unity.
+        </p>
+
+        <h3>🎯 ¿Qué caracteriza una buena UI casual?</h3>
+        <ul>
+          <li>Debe ser <strong>clara y legible</strong>, incluso en pantallas pequeñas.</li>
+          <li>Debe <strong>responder</strong> al input del jugador (feedback visual y sonoro).</li>
+          <li>Debe <strong>respetar el contexto</strong> del juego: colores, estilo y ritmo.</li>
+        </ul>
+
+        <h3>📱 Adaptabilidad en móviles</h3>
+        <p>
+          Una UI adaptable es esencial para juegos casuales que se juegan en distintas resoluciones. En Unity, usá el componente <code>Canvas Scaler</code> en modo <strong>Scale With Screen Size</strong> para mantener proporciones correctas.
+        </p>
+
+        <h3>📐 Anchors y posicionamiento</h3>
+        <p>
+          Usá <strong>anchoring</strong> para fijar elementos como botones, contadores o íconos a zonas específicas (esquinas, bordes). Así, no se deforman ni se mueven en distintas resoluciones.
+        </p>
+
+        <h3>🧪 Feedback visual y sonoro</h3>
+        <ul>
+          <li>Añadí animaciones simples con <code>Animator</code> o <code>DOTween</code>.</li>
+          <li>Agregá efectos de sonido al hacer hover o click (ideal con un <code>UI Audio Manager</code>).</li>
+          <li>Indicá errores con color (rojo) o vibraciones si es en móvil.</li>
+        </ul>
+
+        <h3>🧼 Menos es más</h3>
+        <p>
+          No satures la pantalla. Usá el espacio con criterio: dejá zonas de respiro, evitá mostrar demasiada información al mismo tiempo y destacá lo importante. Guiate por el concepto de <strong>jerarquía visual</strong>.
+        </p>
+
+        <h3>🛠 Bonus: snippets útiles</h3>
+        <p>Este snippet cambia el color de un botón al presionarlo:</p>
+        <pre><code>
+public void OnClickChangeColor(Button button) {
+    ColorBlock cb = button.colors;
+    cb.normalColor = Color.green;
+    button.colors = cb;
+}
+        </code></pre>
+
+        <h3>🎯 Conclusión</h3>
+        <p>
+          Una buena UI no solo embellece: <strong>facilita la experiencia</strong>, hace el juego más accesible y profesional. Si querés que tu juego casual tenga impacto, empezá por la interfaz: es lo primero que el jugador ve, y lo último que olvida.
+        </p>
+
+        <p class="back-link">
+          <a href="/publicaciones.html">← Volver a publicaciones</a>
+        </p>
+      </article>
+
+      <!-- COLUMNA LATERAL -->
+      <section class="blog_entry contact-column-right" id="info-blog">
+        <h2 class="blog-tittle">Unity Dev Blog</h2>
+        <p>
+          Bienvenido a <strong>Unity Dev Blog</strong>, un blog donde comparto ideas, soluciones y
+          experiencias sobre desarrollo de videojuegos con Unity. Si estás aprendiendo o querés mejorar tus
+          proyectos, este lugar es para vos.
+        </p>
+
+        <h2>Sobre mí</h2>
+        <p>
+          Soy <strong>David Marcano</strong>, estudiante y desarrollador de videojuegos. Trabajo en proyectos
+          propios y académicos con Unity, y comparto lo que aprendo para ayudar a otros devs.
+        </p>
+        <a href="../index.html" class="btn">Más sobre mí</a>
+
+        <h2>Suscribite</h2>
+        <form action="#" method="post">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <button type="submit" class="btn">Suscribirme</button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Autor: David Marcano</p>
+    <div>
+      <a href="https://www.linkedin.com/in/marcano96/" target="_blank" class="social-button">
+        <img src="../images/linkedinLogo.webp" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/dfmr96" target="_blank" class="social-button">
+        <img src="../images/github.ico" alt="GitHub">
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

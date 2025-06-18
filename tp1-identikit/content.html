@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos recomendados</title>
+  <link rel="icon" href="icon/unityicon.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #007BFF;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .main-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .nav-vertical {
+      width: 250px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-vertical a {
+      display: block;
+      padding: 12px 0;
+      color: #007BFF;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .nav-vertical a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-verticalcontenido {
+      flex: 1;
+      padding: 40px;
+      text-align: left;
+    }
+
+    .nav-verticalcontenido h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .nav-verticalcontenido p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    strong {
+      color: #007BFF;
+    }
+
+    .channel-block {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.channel-block img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.channel-block p {
+  margin: 0;
+  font-size: 17px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.channel-block a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.channel-block a:hover {
+  text-decoration: underline;
+}
+
+.nav-vertical a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #007BFF;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  gap: 10px;
+}
+
+.nav-vertical a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="games.html">Mis Juegos</a>
+    <a href="trivia.html">Trivia Creativa</a>
+    <a href="content.html">Videos</a>
+  </nav>
+
+  <div class="main-container">
+    
+    <div class="nav-vertical">
+        <a href="brackeys.html"><img src="img/channels/brackeys.jpg" alt="Brackeys"> Brackeys</a>
+        <a href="codemonkey.html"><img src="img/channels/codemonkey.jpg" alt="Code Monkey"> Code Monkey</a>
+        <a href="gamedevtv.html"><img src="img/channels/gamedevtv.jpg" alt="GameDev.tv"> GameDev.tv</a>
+        <a href="dani.html"><img src="img/channels/dani.jpg" alt="Dani"> Dani</a>
+        <a href="sebastianlague.html"><img src="img/channels/sebastianlague.jpg" alt="Sebastian Lague"> Sebastian Lague</a>
+        <a href="blackthornprod.html"><img src="img/channels/blackthornprod.jpg" alt="Blackthornprod"> Blackthornprod</a>
+        <a href="jasonweimann.html"><img src="img/channels/jasonweimann.jpg" alt="Jason Weimann"> Jason Weimann</a>
+      </div>
+
+    <div class="nav-verticalcontenido">
+        <h1>Canales recomendados sobre desarrollo de videojuegos</h1>
+      
+        <div class="channel-block">
+          <img src="img/channels/brackeys.jpg" alt="Brackeys">
+          <p>
+            <a href="brackeys.html"><strong>Brackeys</strong></a> fue uno de los canales más icónicos para aprender Unity desde cero. 
+            Aunque ya no sube nuevos videos, sus tutoriales siguen siendo oro puro para principiantes.
+          </p>
+        </div>
+      
+        <div class="channel-block">
+          <img src="img/channels/codemonkey.jpg" alt="Code Monkey">
+          <p>
+            <a href="codemonkey.html"><strong>Code Monkey</strong></a> explica cómo implementar sistemas de juego complejos en Unity, 
+            con un enfoque técnico y bien organizado. Ideal para quienes quieren profundizar en programación.
+          </p>
+        </div>
+      
+        <div class="channel-block">
+          <img src="img/channels/gamedevtv.jpg" alt="GameDev.tv">
+          <p>
+            <a href="gamedevtv.html"><strong>GameDev.tv</strong></a> es un canal educativo que complementa sus cursos pagos con videos gratuitos 
+            sobre Unity, Unreal y C#. Ideal para seguir un enfoque más académico.
+          </p>
+        </div>
+      
+        <div class="channel-block">
+          <img src="img/channels/dani.jpg" alt="Dani">
+          <p>
+            <a href="dani.html"><strong>Dani</strong></a> mezcla comedia y desarrollo en sus videos virales. Perfecto para entretenerse mientras aprendés.
+          </p>
+        </div>
+      
+        <div class="channel-block">
+          <img src="img/channels/sebastianlague.jpg" alt="Sebastian Lague">
+          <p>
+            <a href="sebastianlague.html"><strong>Sebastian Lague</strong></a> explora algoritmos, simulaciones y visualización 3D. 
+            Ideal para quienes aman la programación gráfica.
+          </p>
+        </div>
+      
+        <div class="channel-block">
+          <img src="img/channels/blackthornprod.jpg" alt="Blackthornprod">
+          <p>
+            <a href="blackthornprod.html"><strong>Blackthornprod</strong></a> combina arte, diseño y jams para inspirar a desarrolladores indies.
+          </p>
+        </div>
+      
+        <div class="channel-block">
+          <img src="img/channels/jasonweimann.jpg" alt="Jason Weimann">
+          <p>
+            <a href="jasonweimann.html"><strong>Jason Weimann</strong></a> enseña arquitectura de software y buenas prácticas para desarrolladores Unity avanzados.
+          </p>
+        </div>
+      </div>
+      
+
+  </div>
+
+</body>
+</html>

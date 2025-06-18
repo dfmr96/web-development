@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>David Marcano IdentiKit</title>
+  <link rel="icon" href="icon/unityicon.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #007BFF;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .main-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .nav-vertical {
+      width: 250px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-vertical a {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      color: #007BFF;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      gap: 10px;
+    }
+
+    .nav-vertical a img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .nav-verticalcontenido {
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .nav-verticalcontenido h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 1080px;
+      height: 600px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="games.html">Mis Juegos</a>
+    <a href="trivia.html">Trivia Creativa</a>
+    <a href="content.html">Videos</a>
+  </nav>
+
+  <div class="main-container">
+    <div class="nav-vertical">
+      <a href="brackeys.html"><img src="img/channels/brackeys.jpg" alt="Brackeys"> Brackeys</a>
+      <a href="codemonkey.html"><img src="img/channels/codemonkey.jpg" alt="Code Monkey"> Code Monkey</a>
+      <a href="gamedevtv.html"><img src="img/channels/gamedevtv.jpg" alt="GameDev.tv"> GameDev.tv</a>
+      <a href="dani.html"><img src="img/channels/dani.jpg" alt="Dani"> Dani</a>
+      <a href="sebastianlague.html"><img src="img/channels/sebastianlague.jpg" alt="Sebastian Lague"> Sebastian Lague</a>
+      <a href="blackthornprod.html"><img src="img/channels/blackthornprod.jpg" alt="Blackthornprod"> Blackthornprod</a>
+      <a href="jasonweimann.html"><img src="img/channels/jasonweimann.jpg" alt="Jason Weimann"> Jason Weimann</a>
+    </div>
+
+    <div class="nav-verticalcontenido">
+      <h1>How to Make a Video Game - #1 - For Beginners (2019)</h1>
+      <iframe src="https://www.youtube.com/embed/BL2u_6sSvcM?si=6iQX1lslEQx4KegP"
+        title="How to Make a Video Game - #1 - For Beginners (2019)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+</html>
