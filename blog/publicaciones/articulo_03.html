@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Photon PUN | Unity Dev Blog</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="../../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <header class="header">
     <nav class="navbar-capsule">
-      <img src="/icon/unityicon.png" alt="Unity Dev Blog logo">
-      <a href="/blog.html">Inicio</a>
-      <a href="/publicaciones.html">Publicaciones</a>
-      <a href="/contacto.html">Contacto</a>
+      <img src="../../icon/unityicon.png" alt="Unity Dev Blog logo">
+      <a href="../../blog.html">Inicio</a>
+      <a href="../../publicaciones.html">Publicaciones</a>
+      <a href="../../contacto.html">Contacto</a>
     </nav>
   </header>
 
@@ -30,7 +32,9 @@
         </div>
 
         <p>
-          <strong>Photon PUN</strong> (Photon Unity Networking) es una solución lista para usar que permite agregar funcionalidades multijugador a tus juegos de Unity sin necesidad de montar tu propio servidor. Es ideal para juegos cooperativos, PvP y experiencias en tiempo real.
+          <strong>Photon PUN</strong> (Photon Unity Networking) es una solución lista para usar que permite agregar
+          funcionalidades multijugador a tus juegos de Unity sin necesidad de montar tu propio servidor. Es ideal para
+          juegos cooperativos, PvP y experiencias en tiempo real.
         </p>
 
         <h3>🚀 ¿Qué podés hacer con Photon?</h3>
@@ -47,7 +51,8 @@
           <li>Cada jugador es un <strong>Actor</strong> con un ID único.</li>
         </ul>
 
-        <p>Cuando instanciás objetos con `PhotonNetwork.Instantiate`, estos se sincronizan automáticamente entre todos los jugadores de la sala.</p>
+        <p>Cuando instanciás objetos con `PhotonNetwork.Instantiate`, estos se sincronizan automáticamente entre todos
+          los jugadores de la sala.</p>
 
         <h3>🧪 Ejemplo básico con RPC</h3>
         <p>Un RPC es una función que se ejecuta en todos los clientes:</p>
@@ -85,15 +90,18 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
         </ul>
 
         <h3>🧩 Cuándo evitarlo</h3>
-        <p>Photon es excelente para prototipos o juegos medianos. Pero si querés escalar a millones de usuarios o tenés lógica de servidor compleja, deberías considerar soluciones dedicadas como **Mirror**, **Netcode for GameObjects** o backend custom.</p>
+        <p>Photon es excelente para prototipos o juegos medianos. Pero si querés escalar a millones de usuarios o tenés
+          lógica de servidor compleja, deberías considerar soluciones dedicadas como **Mirror**, **Netcode for
+          GameObjects** o backend custom.</p>
 
         <h3>🎯 Conclusión</h3>
         <p>
-          Photon PUN es una excelente puerta de entrada al mundo multijugador en Unity. Tiene una API sencilla, buena documentación y una comunidad activa. Perfecto para tu primer proyecto coop o competitivo.
+          Photon PUN es una excelente puerta de entrada al mundo multijugador en Unity. Tiene una API sencilla, buena
+          documentación y una comunidad activa. Perfecto para tu primer proyecto coop o competitivo.
         </p>
 
         <p class="back-link">
-          <a href="/publicaciones.html">← Volver a publicaciones</a>
+          <a href="../../publicaciones.html">← Volver a publicaciones</a>
         </p>
       </article>
 
@@ -111,7 +119,7 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
           Soy <strong>David Marcano</strong>, estudiante y desarrollador de videojuegos. Trabajo en proyectos
           propios y académicos con Unity, y comparto lo que aprendo para ayudar a otros devs.
         </p>
-        <a href="../index.html" class="btn">Más sobre mí</a>
+        <a href="../../index.html" class="btn">Más sobre mí</a>
 
         <h2>Suscribite</h2>
         <form action="#" method="post">
@@ -136,13 +144,14 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
     <p>Autor: David Marcano</p>
     <div>
       <a href="https://www.linkedin.com/in/marcano96/" target="_blank" class="social-button">
-        <img src="../images/linkedinLogo.webp" alt="LinkedIn">
+        <img src="../../images/linkedinLogo.webp" alt="LinkedIn">
       </a>
       <a href="https://github.com/dfmr96" target="_blank" class="social-button">
-        <img src="../images/github.ico" alt="GitHub">
+        <img src="../../images/github.ico" alt="GitHub">
       </a>
     </div>
   </footer>
 
 </body>
+
 </html>
