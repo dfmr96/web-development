@@ -57,15 +57,18 @@
   })();
 
   document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    emailjs.sendForm('service_wqzpfel', 'template_p9nvrpd', this)
-      .then(function() {
-        document.getElementById("form-status").innerHTML = "¡Mensaje enviado correctamente!";
-      }, function(error) {
-        document.getElementById("form-status").innerHTML = "Error al enviar el mensaje: " + JSON.stringify(error);
-      });
-  });
+  const form = this; // guardamos referencia al formulario
+
+  emailjs.sendForm('service_wqzpfel', 'template_p9nvrpd', form)
+    .then(function() {
+      document.getElementById("form-status").innerHTML = "¡Mensaje enviado correctamente!";
+      form.reset(); // limpia los campos del formulario
+    }, function(error) {
+      document.getElementById("form-status").innerHTML = "Error al enviar el mensaje: " + JSON.stringify(error);
+    });
+});
 </script>
 
 
