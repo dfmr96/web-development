@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto - David Marcano</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1><a href="index.html">David Marcano</a></h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="skills.html">Habilidades</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact">
+      <h2>Contacto</h2>
+      <p>¿Te interesa trabajar conmigo o tenés alguna consulta? ¡Escribime!</p>
+      <form id="contact-form">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="user_name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="user_email" required />
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="user_message" rows="5" required></textarea>
+
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+
+      <p id="form-status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 David Marcano. Todos los derechos reservados.</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/marcano96/">LinkedIn</a> |
+      <a href="https://github.com/dfmr96">GitHub</a> |
+      <a href="https://dfmr96.itch.io/">Itch.io</a>
+    </div>
+  </footer>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("pBBgQidkHzbNwRkiz");
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_wqzpfel', 'template_p9nvrpd', this)
+      .then(function() {
+        document.getElementById("form-status").innerHTML = "¡Mensaje enviado correctamente!";
+      }, function(error) {
+        document.getElementById("form-status").innerHTML = "Error al enviar el mensaje: " + JSON.stringify(error);
+      });
+  });
+</script>
+
+
+</body>
+</html>

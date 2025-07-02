@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Botonera de Sonidos</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Botonera de Sonidos</h1>
+    <div class="sound-board">
+      <div class="sound-button">
+        <h3>1-Up</h3>
+        <img src="images/1up.png" alt="Ladrido" class="sound-img" />
+        <button onclick="playSound('sounds/1up.wav')">Reproducir</button>
+      </div>
+      <div class="sound-button">
+        <h3>Coin</h3>
+        <img src="images/coin.png" alt="Miau" class="sound-img" />
+        <button onclick="playSound('sounds/coin.wav')">Reproducir</button>
+      </div>
+      <div class="sound-button">
+        <h3>Fireball</h3>
+        <img src="images/fireball.png" alt="Campana" class="sound-img" />
+        <button onclick="playSound('sounds/fireball.wav')">Reproducir</button>
+      </div>
+      <div class="sound-button">
+        <h3>Pipe</h3>
+        <img src="images/pipe.png" alt="Aplausos" class="sound-img" />
+        <button onclick="playSound('sounds/pipe.wav')">Reproducir</button>
+      </div>
+      <div class="sound-button">
+        <h3>PowerUp</h3>
+        <img src="images/powerup.png" alt="Bocina" class="sound-img" />
+        <button onclick="playSound('sounds/powerup.wav')">Reproducir</button>
+      </div>
+    </div>
+  </main>
+  <script src="js/botonera.js"></script>
+</body>
+</html>
